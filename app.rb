@@ -5,15 +5,17 @@ require 'sinatra'
 require 'json'
 require 'sinatra/json'
 
-require 'bol'
-
-require './lib/initializers'
-require './lib/groups'
+require './lib/group'
+require './lib/present_list'
 
 get '/' do
   json status: 'OK'
 end
 
-get '/groups' do
+get '/lists' do
   json Group.all
+end
+
+get '/lists/:list_id' do |list_id|
+  json PresentList.new(list_id).presents
 end

@@ -1,5 +1,11 @@
 - id: 1
   name: Broer
+  categories:
+    - 1430
+    - 6118
+    - 10554
 
 - id: 2
   name: Zus
+  categories:
+    - 1200
