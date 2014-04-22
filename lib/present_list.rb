@@ -2,32 +2,31 @@
 # nice list voor de iOS app.
 class PresentList
 
-  MINIMUM_PRICE = 10
-  MAXIMUM_PRICE = 50
-  MINIMUM_RATING = 40
-
   attr_reader :group_id
 
   def initialize(group_id)
     @group_id = group_id
   end
 
-  def presents
-    products.flatten.select do |product|
-      product['available'] &&
-      !product['rating'].nil? &&
-      product['rating'] > MINIMUM_RATING &&
-      product['price'] > MINIMUM_PRICE &&
-      product['price'] < MAXIMUM_PRICE
-    end.shuffle
+  def presents(page)
+    page = page.to_i
+    start = page * 10
+    ending = start + 9
+
+    selected_products[start..ending].reverse
   end
 
   private
 
+  def selected_products
+    products.flatten.select do |product|
+      ProductIncludePolicy.new(product).includeable?
+    end
+  end
+
   def products
     category_ids.map do |category_id|
       begin
-        puts "Fetching #{category_id}"
         JSON.load(File.open("data/products/#{category_id}.json"))
       rescue Errno::ENOENT
         puts "No file named #{category_id}"

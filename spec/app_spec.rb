@@ -39,4 +39,9 @@ describe "GET /groups/:id/presents" do
     get '/lists/1'
     expect(response_data).to be_a(Array)
   end
+
+  it "returns a page from the product lists" do
+    get '/lists/1?page=1'
+    expect(response_data.count).to eq 10
+  end
 end
