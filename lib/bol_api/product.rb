@@ -26,7 +26,7 @@ module BolAPI
       }
 
       @product_type = data['gpc']
-
+      
       # we zijn alleen geinteresseerd in normale bol producten
       bol_offer = data['offerData']['offers'].find { |offer| offer['seller']['id'] == '0' }
       if bol_offer
