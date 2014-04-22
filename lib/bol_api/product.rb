@@ -18,21 +18,27 @@ module BolAPI
       @desktop_url = value_for_key(data['urls'], 'DESKTOP')
       @mobile_url = value_for_key(data['urls'], 'MOBILE')
 
-      large_image_key = data['images'].find { |url| url['key'] == 'XL' }
-      large_image_url = large_image_key ? large_image_key['url'] : nil
+      if data['images']
+        large_image_key = data['images'].find { |url| url['key'] == 'XL' }
+        large_image_url = large_image_key ? large_image_key['url'] : nil
 
-      @images = {
-        extra_large: large_image_url
-      }
+        @images = {
+          extra_large: large_image_url
+        }
+      end
 
       @product_type = data['gpc']
-      
-      # we zijn alleen geinteresseerd in normale bol producten
-      bol_offer = data['offerData']['offers'].find { |offer| offer['seller']['id'] == '0' }
-      if bol_offer
-        @price = bol_offer['price']
-        @availability_description = bol_offer['availabilityDescription']
-        @available = true
+
+      if data['offerData'] && data['offerData']['offers']
+        # we zijn alleen geinteresseerd in normale bol producten
+        bol_offer = data['offerData']['offers'].find { |offer| offer['seller']['id'] == '0' }
+        if bol_offer
+          @price = bol_offer['price']
+          @availability_description = bol_offer['availabilityDescription']
+          @available = true
+        else
+          @available = false
+        end
       else
         @available = false
       end

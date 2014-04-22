@@ -26,7 +26,13 @@ class PresentList
 
   def products
     category_ids.map do |category_id|
-      JSON.load(File.open("data/#{category_id}.json"))
+      begin
+        puts "Fetching #{category_id}"
+        JSON.load(File.open("data/products/#{category_id}.json"))
+      rescue Errno::ENOENT
+        puts "No file named #{category_id}"
+        [] # soms bestaan dingen niet
+      end
     end
   end
 

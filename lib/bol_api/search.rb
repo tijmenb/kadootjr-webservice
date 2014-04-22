@@ -3,7 +3,7 @@ require 'json'
 module BolAPI
   module Search
     def search(args = {})
-      query = { apikey: api_key, format: 'json', dataoutput: 'products', limit: 10 }
+      query = { apikey: api_key, format: 'json', dataoutput: 'products', limit: 100 }
 
       if args[:category_ids]
         query.merge! ids: args[:category_ids].join(',')
