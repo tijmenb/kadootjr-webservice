@@ -3,8 +3,8 @@ require './lib/bol_api/product'
 describe BolAPI::Product do
   describe ".initialize" do
     let :product do
-      data = JSON.parse(File.read("spec/fakeweb_responses/search.json"))['products'].first
-      BolAPI::Product.new(data)
+      product_data = JSON.parse(File.read("spec/fakeweb_responses/product.json"))
+      BolAPI::Product.new(product_data)
     end
 
     it "initializes with all common attributes" do
