@@ -10,7 +10,7 @@ task :download_products do
 
   categories = Group.all.map { |group| group['categories'] }.flatten.uniq
   categories.each do |category_id|
-    if File.exists?("data/products/#{category_id}.json")
+    if File.exists?("data/#{category_id}.json")
       puts "Skipping: category ##{category_id}..."
       next
     else
@@ -25,7 +25,7 @@ task :download_products do
       end
 
       json_data = JSON.dump(products.as_json)
-      File.open("data/products/#{category_id}.json", "w") { |f| f.write(json_data) }
+      File.open("data/#{category_id}.json", "w") { |f| f.write(json_data) }
     rescue StandardError => e
       puts "#{e.inspect}"
       puts "Products:"
