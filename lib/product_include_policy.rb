@@ -1,7 +1,7 @@
 class ProductIncludePolicy
   attr_reader :product
 
-  BAD_WORDS = %w[samengevat examenbundel]
+  BAD_WORDS = YAML.load_file("configs/banned_words.yml")
   MINIMUM_PRICE = 10
   MAXIMUM_PRICE = 50
   MINIMUM_RATING = 40
