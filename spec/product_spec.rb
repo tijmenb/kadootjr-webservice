@@ -13,8 +13,8 @@ describe BolAPI::Product do
     end
 
     it "creates fancy accessors for the URLs" do
-      product.desktop_url.should == "http://www.bol.com/nl/p/de-waarheid-over-de-zaak-harry-quebert/9200000011366603/"
-      product.mobile_url.should == "https://m.bol.com/nl/p/de-waarheid-over-de-zaak-harry-quebert/9200000011366603/"
+      product.desktop_url.should == "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=21278&url=http%3A//www.bol.com/nl/p/de-waarheid-over-de-zaak-harry-quebert/9200000011366603/&f=TXL"
+      product.mobile_url.should == "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=21278&url=https%3A//m.bol.com/nl/p/de-waarheid-over-de-zaak-harry-quebert/9200000011366603/&f=TXL"
     end
 
     it "creates a hash for the images" do

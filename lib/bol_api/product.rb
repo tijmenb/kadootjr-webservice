@@ -1,4 +1,5 @@
 require 'active_support/all'
+require 'uri'
 
 module BolAPI
   class Product
@@ -15,8 +16,14 @@ module BolAPI
         instance_variable_set("@#{attr}", data[attr.camelize(:lower)])
       end
 
-      @desktop_url = value_for_key(data['urls'], 'DESKTOP')
-      @mobile_url = value_for_key(data['urls'], 'MOBILE')
+      partner_id = 21278
+      url_encoded_url = URI.escape(value_for_key(data['urls'], 'DESKTOP')).gsub(":", "%3A")
+      @desktop_url = "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=#{partner_id}&url=#{url_encoded_url}&f=TXL"
+
+      url_encoded_url = URI.escape(value_for_key(data['urls'], 'MOBILE')).gsub(":", "%3A")
+      @mobile_url = "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=#{partner_id}&url=#{url_encoded_url}&f=TXL"
+
+      # &name=forward_email
 
       if data['images']
         large_image_key = data['images'].find { |url| url['key'] == 'XL' }
