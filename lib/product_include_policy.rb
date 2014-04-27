@@ -26,12 +26,12 @@ class ProductIncludePolicy
 
   def rating_okay?
     !product['rating'].nil? &&
-    product['rating'] > MINIMUM_RATING
+    product['rating'].to_i > MINIMUM_RATING
   end
 
   def price_okay?
-    product['price'] > MINIMUM_PRICE &&
-    product['price'] < MAXIMUM_PRICE
+    product['price'].to_i > MINIMUM_PRICE &&
+    product['price'].to_i < MAXIMUM_PRICE
   end
 
   def words_okay?

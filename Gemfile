@@ -6,6 +6,7 @@ gem 'thin'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'redis'
 
 # develop:
 gem 'shotgun'
