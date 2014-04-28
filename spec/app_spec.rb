@@ -1,5 +1,5 @@
 require 'spec_helper'
-require './app'
+require './app/application'
 
 module Helpers
   def app
