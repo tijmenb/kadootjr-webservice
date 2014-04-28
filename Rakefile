@@ -17,6 +17,9 @@ end
 
 desc 'Import initial'
 task :initial do
+  puts 'Downloading products'
   ProductDownloader.new.download
+
+  puts 'Inserting products in database'
   ProductImporter.new.import
 end
