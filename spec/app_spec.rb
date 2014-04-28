@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 require './app'
 
 module Helpers
@@ -27,5 +27,12 @@ describe "GET /groups/:id/presents" do
   it "returns presents from Bol.com" do
     get '/lists/1'
     expect(response_data).to be_a(Array)
+  end
+end
+
+describe "POST /swipes" do
+  it "saves the swipe to Redis" do
+    post '/swipes', JSON.dump('group_id' => 1)
+    expect(response_data).to eq("message"=>"OK")
   end
 end

@@ -1,0 +1,8 @@
+<table class='table'>
+  <% Group.all.each do |g| %>
+    <tr>
+      <td><%= g['id'] %></td>
+      <td><a href='/admin/lists/<%= g['id'] %>'><%= g['name'] %></a></td>
+    </tr>
+  <% end %>
+</table>

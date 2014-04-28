@@ -1,14 +1,15 @@
-<h1>List: <%= @list_id %></h1>
+<h2>List: <%= @list_id %> | <%= @products.count %> products</h2>
 
-<table>
+<table class='table'>
 <tr>
   <th></th>
   <th>Title</th>
   <th>Ranking</th>
   <th>Swipe score</th>
 </tr>
-<% @products.each do |product| %>
+<% @products.each_with_index do |product, i| %>
   <tr>
+    <td><%= i + 1 %></td>
     <td><img src='<%= product['image'] %>' style='width: 100px'/></td>
     <td><%= product['title'] %></td>
     <td><%= product['rating'] %></td>

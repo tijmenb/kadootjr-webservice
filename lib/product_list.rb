@@ -9,7 +9,7 @@ class ProductList
     @group_id = group_id
   end
 
-  def products(page)
+  def paginated_products(page)
     page = page.to_i
     start = page * PER_PAGE
     ending = start + PER_PAGE-1

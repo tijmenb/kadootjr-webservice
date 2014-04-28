@@ -5,18 +5,14 @@ require 'sinatra'
 require 'json'
 require 'sinatra/json'
 
-require 'redis'
-
 require './lib/group'
 require './lib/product_list'
-
-configure :production do
-  require 'newrelic_rpm'
-end
+require './lib/swipe_creator'
+require './config/configuration'
+require './app/helpers'
 
 get '/' do
-  data = { lists_url: "http://#{request.host}:#{request.port}/lists" }
-  json data
+  json(lists_url: "http://#{request.host}:#{request.port}/lists")
 end
 
 get '/lists' do
@@ -30,24 +26,23 @@ get '/lists' do
 end
 
 get '/lists/:list_id' do |list_id|
-  json ProductList.new(list_id).products(params['page'] || 0)
+  json ProductList.new(list_id).paginated_products(params['page'] || 0)
 end
 
-# Sla de swipe op in de database
 post '/swipes' do
   swipe =  JSON.parse(request.body.read)
-  score_change = swipe['direction'] == 'added' ? 1 : -1
-  Redis.current.zincrby("kadootjr-group:#{swipe['group_id']}:swipe-popularity", score_change, swipe['product_id'])
-  Redis.current.zincrby("kadootjr-group:#{swipe['group_id']}:swipe-#{swipe['direction']}", 1, swipe['product_id'])
-  json({message: 'OK'})
-end
-
-get '/admin/lists/:list_id' do |list_id|
-  @list_id = list_id
-  @products = ProductList.new(list_id).all_products.take(150)
-  erb :list
+  SwipeCreator.new(swipe).create
+  json(message: 'OK')
 end
 
 get '/admin' do
-  erb :admin
+  protected!
+  erb :admin_dashboard, layout: :admin
+end
+
+get '/admin/lists/:list_id' do |list_id|
+  protected!
+  @list_id = list_id
+  @products = ProductList.new(list_id).all_products.take(300)
+  erb :list, layout: :admin
 end
