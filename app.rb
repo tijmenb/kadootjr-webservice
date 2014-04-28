@@ -10,6 +10,10 @@ require 'redis'
 require './lib/group'
 require './lib/product_list'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 get '/' do
   data = { lists_url: "http://#{request.host}:#{request.port}/lists" }
   json data

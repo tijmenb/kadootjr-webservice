@@ -1,7 +1,7 @@
 class ProductIncludePolicy
   attr_reader :product
 
-  BAD_WORDS = YAML.load_file("configs/banned_words.yml")
+  BAD_WORDS = YAML.load_file("config/banned_words.yml")
   MINIMUM_PRICE = 5
   MINIMUM_RATING = 10
 

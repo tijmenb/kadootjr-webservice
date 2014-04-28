@@ -2,6 +2,6 @@ require 'yaml'
 
 class Group
   def self.all
-    @all ||= YAML.load(File.read("./configs/categories.yml"))
+    @all ||= YAML.load(File.read("./config/categories.yml"))
   end
 end

@@ -7,6 +7,7 @@ gem 'thin'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'redis'
+gem 'newrelic_rpm'
 
 # develop:
 gem 'shotgun'
