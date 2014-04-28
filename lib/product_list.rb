@@ -15,7 +15,8 @@ class ProductList
     ending = start + PER_PAGE-1
 
     selected_products[start..ending].to_a.reverse.map do |product|
-      { title: product['title'],
+      { id: product['id'],
+        title: product['title'],
         description: product['short_description'],
         price: product['price'].to_f,
         mobile_url: affillize_url(product['mobile_url']),
@@ -39,8 +40,8 @@ class ProductList
 
   def raw_products
     Redis.current.zunionstore(combined_key,
-      ["kadootjr-group:#{group_id}:swipe_popularity",
-      "kadootjr-group:#{group_id}:ratings"])
+      ["kadootjr-group:#{group_id}:swipe-popularity",
+       "kadootjr-group:#{group_id}:ratings"])
 
     product_ids = Redis.current.zrevrange(combined_key, 0, -1).to_a
     product_ids.map do |product_id|
