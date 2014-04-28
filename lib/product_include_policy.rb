@@ -2,9 +2,8 @@ class ProductIncludePolicy
   attr_reader :product
 
   BAD_WORDS = YAML.load_file("configs/banned_words.yml")
-  MINIMUM_PRICE = 10
-  MAXIMUM_PRICE = 50
-  MINIMUM_RATING = 20
+  MINIMUM_PRICE = 5
+  MINIMUM_RATING = 10
 
   def initialize(product)
     @product = product
@@ -25,13 +24,11 @@ class ProductIncludePolicy
   end
 
   def rating_okay?
-    !product['rating'].nil? &&
-    product['rating'].to_i > MINIMUM_RATING
+    !product['rating'].nil? && product['rating'].to_i > MINIMUM_RATING
   end
 
   def price_okay?
-    product['price'].to_i > MINIMUM_PRICE &&
-    product['price'].to_i < MAXIMUM_PRICE
+    product['price'].to_i > MINIMUM_PRICE
   end
 
   def words_okay?

@@ -1,6 +1,8 @@
 require './lib/product_include_policy'
 
 class ProductList
+  PER_PAGE = 25
+
   attr_reader :group_id
 
   def initialize(group_id)
@@ -9,10 +11,18 @@ class ProductList
 
   def products(page)
     page = page.to_i
-    start = page * 10
-    ending = start + 9
+    start = page * PER_PAGE
+    ending = start + PER_PAGE-1
 
-    all_products[start..ending].to_a.reverse
+    selected_products[start..ending].to_a.reverse.map do |product|
+      { title: product['title'],
+        description: product['short_description'],
+        price: product['price'].to_f,
+        mobile_url: affillize_url(product['mobile_url']),
+        desktop_url: affillize_url(product['desktop_url']),
+        image_url: product['image'],
+      }
+    end
   end
 
   def all_products
@@ -46,9 +56,9 @@ class ProductList
     Group.all.find { |g| g['id'].to_s == group_id }['categories']
   end
 
-  # def affillize_url(url)
-  #   partner_id = 21278
-  #   url_encoded_url = URI.escape(url).gsub(":", "%3A")
-  #   "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=#{partner_id}&url=#{url_encoded_url}&f=TXL"
-  # end
+  def affillize_url(url)
+    partner_id = 21278
+    url_encoded_url = URI.escape(url).gsub(":", "%3A")
+    "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=#{partner_id}&url=#{url_encoded_url}&f=TXL"
+  end
 end
