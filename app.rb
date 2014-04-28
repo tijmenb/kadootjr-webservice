@@ -30,7 +30,8 @@ get '/lists/:list_id' do |list_id|
 end
 
 get '/admin/lists/:list_id' do |list_id|
-  @products = ProductList.new(list_id).all_products
+  @list_id = list_id
+  @products = ProductList.new(list_id).all_products.take(150)
   erb :list
 end
 

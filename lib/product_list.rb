@@ -26,7 +26,7 @@ class ProductList
   end
 
   def all_products
-    raw_products
+    selected_products
   end
 
   private

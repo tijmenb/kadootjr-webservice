@@ -1,9 +1,9 @@
-<h1>List</h1>
+<h1>List: <%= @list_id %></h1>
 
 <table>
 <% @products.each do |product| %>
   <tr>
-    <td><img src='<%= product['image_thumbnail'] %>'/>'</td>
+    <td><img src='<%= product['image'] %>' style='width: 100px'/></td>
     <td><%= product['title'] %></td>
     <td><%= product['rating'] %></td>
   </tr>
