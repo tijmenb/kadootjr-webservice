@@ -1,5 +1,5 @@
-- id: 1
-  name: Broer
+- id: 'broertje'
+  name: Voor je broertje
   categories:
     - 8293
     - 19
@@ -28,8 +28,8 @@
     - 10730
     - 10732
 
-- id: 2
-  name: Zus
+- id: 'zusje'
+  name: Voor je zusje
   categories:
     - 8293
     - 19
@@ -53,8 +53,8 @@
     - 10829
     - 10832
 
-- id: 3
-  name: Vriendje
+- id: 'vriendje'
+  name: Voor je vriendje
   categories:
     - 8293
     - 19
@@ -84,7 +84,7 @@
     - 10730
     - 10732
 
-- id: 4
+- id: 'vriendinnetje'
   name: Vriendinnetje
   categories:
     - 8293
@@ -109,8 +109,8 @@
     - 10829
     - 10832
 
-- id: 5
-  name: Vader
+- id: 'vader'
+  name: Voor je vader
   categories:
     - 8293
     - 19
@@ -141,8 +141,8 @@
     - 10730
     - 10732
 
-- id: 6
-  name: Moeder
+- id: 'moeder'
+  name: Voor je moeder
   categories:
     - 8293
     - 19
@@ -174,8 +174,8 @@
     - 10802
     - 10800
 
-- id: 7
-  name: Oma
+- id: 'oma'
+  name: Voor je oma
   categories:
     - 8293
     - 19
@@ -203,8 +203,8 @@
     - 10800
 
 
-- id: 8
-  name: Opa
+- id: 'opa'
+  name: Voor je opa
   categories:
     - 8293
     - 19
@@ -226,8 +226,8 @@
     - 10800
 
 
-- id: 9
-  name: Baby
+- id: 'baby'
+  name: Voor een baby
   categories:
     - 10528
     - 10535
@@ -235,3 +235,9 @@
     - 11299
     - 11285
     - 7195
+
+
+- id: 'vijand'
+  name: Voor je vijand
+  categories:
+    - 12021
