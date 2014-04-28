@@ -4,7 +4,7 @@ class ProductIncludePolicy
   BAD_WORDS = YAML.load_file("configs/banned_words.yml")
   MINIMUM_PRICE = 10
   MAXIMUM_PRICE = 50
-  MINIMUM_RATING = 40
+  MINIMUM_RATING = 20
 
   def initialize(product)
     @product = product

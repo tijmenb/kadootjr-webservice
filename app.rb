@@ -8,8 +8,7 @@ require 'sinatra/json'
 require 'redis'
 
 require './lib/group'
-require './lib/present_list'
-require './lib/product_include_policy'
+require './lib/product_list'
 
 get '/' do
   data = { lists_url: "http://#{request.host}:#{request.port}/lists" }
@@ -27,10 +26,14 @@ get '/lists' do
 end
 
 get '/lists/:list_id' do |list_id|
-  json PresentList.new(list_id).presents(params['page'] || 0)
+  json ProductList.new(list_id).products(params['page'] || 0)
 end
 
 get '/admin/lists/:list_id' do |list_id|
-  @products = PresentList.new(list_id).all_products
+  @products = ProductList.new(list_id).all_products
   erb :list
+end
+
+get '/admin' do
+  erb :admin
 end

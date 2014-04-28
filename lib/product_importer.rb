@@ -1,29 +1,35 @@
 require 'redis'
 require 'json'
 
-require './lib/group'
+require './lib/bol_api'
 
+# Importeer een Bol.com categorie in Redis
 class ProductImporter
-  def import
-    Encoding.default_external = Encoding::UTF_8
+  attr_reader :category, :group
 
-    Group.all.each do |group|
-      group['categories'].each do |category_id|
-        products = JSON.load(File.open "tmp/cache/#{category_id}.json")
-        products.each do |product|
-          add_or_update_product(product, group['id'])
-        end
-      end
+  def initialize(category: category, group: group)
+    @category = category
+    @group = group
+  end
+
+  def import
+    products.each do |product|
+      add_or_update_product(product)
     end
   end
 
-  def add_or_update_product(product, group_id)
-    id = product['id']
-    Redis.current.mapped_hmset("kadootjr:product:#{id}", product)
+  private
 
-    unless Redis.current.zscore("kadootjr:group:#{group_id}", id)
-      Redis.current.zadd("kadootjr-group:#{group_id}:swipe_popularity", 0, id)
-      Redis.current.zadd("kadootjr-group:#{group_id}:ratings", product['rating'], id)
-    end
+  def add_or_update_product(product)
+    Redis.current.mapped_hmset("kadootjr:product:#{product.id}", product.as_json)
+    Redis.current.zadd("kadootjr-group:#{group}:ratings", product.rating, product.id)
+  end
+
+  def products
+    @products ||= bol_client.search(category_ids: [category])
+  end
+
+  def bol_client
+    @bol_client ||= BolAPI::Client.new(ENV['BOL_KEY'])
   end
 end

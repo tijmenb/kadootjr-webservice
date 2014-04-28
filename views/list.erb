@@ -3,6 +3,7 @@
 <table>
 <% @products.each do |product| %>
   <tr>
+    <td><img src='<%= product['image_thumbnail'] %>'/>'</td>
     <td><%= product['title'] %></td>
     <td><%= product['rating'] %></td>
   </tr>

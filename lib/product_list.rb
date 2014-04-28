@@ -1,35 +1,33 @@
-# Maak van de cached Bol API results een
-# nice list voor de iOS app.
-class PresentList
+require './lib/product_include_policy'
 
+class ProductList
   attr_reader :group_id
 
   def initialize(group_id)
     @group_id = group_id
   end
 
-  def presents(page)
+  def products(page)
     page = page.to_i
     start = page * 10
     ending = start + 9
 
-    selected_products[start..ending].reverse
+    all_products[start..ending].to_a.reverse
   end
 
   def all_products
-    selected_products
+    raw_products
   end
 
   private
 
   def selected_products
-    products.flatten.select do |product|
+    raw_products.flatten.select do |product|
       ProductIncludePolicy.new(product).includeable?
     end
   end
 
-  def products
-    combined_key = "kadootjr-group:#{group_id}:combined"
+  def raw_products
     Redis.current.zunionstore(combined_key,
       ["kadootjr-group:#{group_id}:swipe_popularity",
       "kadootjr-group:#{group_id}:ratings"])
@@ -38,6 +36,10 @@ class PresentList
     product_ids.map do |product_id|
       Redis.current.hgetall("kadootjr:product:#{product_id}")
     end
+  end
+
+  def combined_key
+    "kadootjr-group:#{group_id}:combined"
   end
 
   def category_ids
