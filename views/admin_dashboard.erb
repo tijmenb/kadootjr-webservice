@@ -6,3 +6,12 @@
     </tr>
   <% end %>
 </table>
+
+<table class='table'>
+  <% Redis.current.info.each do |k,v| %>
+    <tr>
+      <td><strong><%= k %></strong></td>
+      <td><%= v %></td>
+    </tr>
+  <% end %>
+</table>
