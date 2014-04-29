@@ -3,7 +3,7 @@ class ProductIncludePolicy
 
   BAD_WORDS = YAML.load_file("config/banned_words.yml")
   MINIMUM_PRICE = 5
-  MINIMUM_RATING = 10
+  MINIMUM_RATING = 1
 
   def initialize(product)
     @product = product
@@ -33,7 +33,7 @@ class ProductIncludePolicy
 
   def words_okay?
     BAD_WORDS.none? do |word|
-      product['title'].downcase.include? word
+      product['title'].downcase.include? word.downcase
     end
   end
 end
