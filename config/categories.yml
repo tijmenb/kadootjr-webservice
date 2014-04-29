@@ -41,7 +41,8 @@
     - 6196
     - 6230
     - 6251
-    - 10505
+    - 10508 # handwerken en mode
+    - 10511 # Koken en bakken
     - 12383
     - 12429
     - 12687
@@ -97,7 +98,9 @@
     - 6196
     - 6230
     - 6251
-    - 10505
+    - 10508 # handwerken en mode
+    - 10511 # Koken en bakken
+    - 10506 # Boetseren en vormgeven
     - 10564 # legpuzzels
     - 12383
     - 12429
@@ -160,8 +163,9 @@
     - 6080
     - 6196
     - 6230
-    - 6251
-    - 10505
+    - 10508 # handwerken en mode
+    - 10511 # Koken en bakken
+    - 10506 # Boetseren en vormgeven
     - 12383
     - 12429
     - 12687
@@ -190,7 +194,9 @@
     - 8293
     - 19
     - 6046
-    - 10505
+    - 10508 # handwerken en mode
+    - 10511 # Koken en bakken
+    - 10506 # Boetseren en vormgeven
     - 10564 # legpuzzels
     - 12383
     - 12429
