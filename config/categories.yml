@@ -1,9 +1,9 @@
 - id: 'vriendje'
   name: Vriend
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
-    - 8292 # Engelse boeken
+    - 3131 # Categorie - Engelse Boeken
     - 105 # Boeken - Reisgidsen
     - 4294754280
     - 3132 # muziek totaal
@@ -33,9 +33,9 @@
 - id: 'vriendinnetje'
   name: Vriendin
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
-    - 8292 # Engelse boeken
+    - 3131 # Categorie - Engelse Boeken
     - 105 # Boeken - Reisgidsen
     - 4284431352
     - 3132 # muziek totaal
@@ -61,9 +61,9 @@
 - id: 'vader'
   name: Voor je vader
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
-    - 8292 # Engelse boeken
+    - 3131 # Categorie - Engelse Boeken
     - 105 # Boeken - Reisgidsen
     - 4294754280
     - 6080 # Muziek POP
@@ -98,9 +98,9 @@
 - id: 'moeder'
   name: Voor je moeder
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
-    - 8292 # Engelse boeken
+    - 3131 # Categorie - Engelse Boeken
     - 263 # Boeken - Wonen en Tuinieren
     - 105 # Boeken - Reisgidsen
     - 32 # Boeken - Bekende koks
@@ -145,9 +145,9 @@
 - id: 'broertje'
   name: Voor je broertje
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
-    - 8292 # Engelse boeken
+    - 3131 # Categorie - Engelse Boeken
     - 105 # Boeken - Reisgidsen
     - 4294754280
     - 3132 # muziek totaal
@@ -177,9 +177,9 @@
 - id: 'zusje'
   name: Voor je zusje
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
-    - 8292 # Engelse boeken
+    - 3131 # Categorie - Engelse Boeken
     - 105 # Boeken - Reisgidsen
     - 4284431352
     - 3132 # muziek totaal
@@ -217,7 +217,7 @@
 - id: 'oma'
   name: Voor je oma
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 32 # Boeken - Bekende koks
     - 31 # Boeken - Kookboeken
     - 263 # Boeken - Wonen en Tuinieren
@@ -251,7 +251,7 @@
 - id: 'opa'
   name: Voor je opa
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 105 # Boeken - Reisgidsen
     - 19
     - 4294754280
@@ -277,7 +277,7 @@
 - id: 'huwelijk'
   name: Huwelijkscadeau
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 4070 # Digitale fotografie - digitale camera's
     - 11809 # Kookgerei - Peper en zoutstellen
     - 11867 # koken en tafelen - kookgerei - Servies
