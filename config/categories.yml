@@ -1,26 +1,26 @@
 - id: 'vriendje'
   name: Vriend
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
-    - 8292
+    - 8292 # Engelse boeken
     - 4294754280
-    - 3132
-    - 6080
-    - 6142
-    - 6196
-    - 11551
-    - 11642
-    - 5201
-    - 10500
+    - 3132 # muziek totaal
+    - 6080 # Muziek POP
+    - 6142 # Film + tv Actie en Avontuur
+    - 6196 # Film + tv Humor
+    - 11551 # Games XBOX One
+    - 11642 # Games Playstaytion 4
+    - 5201 # Games PC
+    - 10500 # Speelgoed Electronisch speelgoed
     - 10579
     - 10596
-    - 12432
+    - 12432 # Mooi en gezond Herengeuren
     - 4098
     - 8427
     - 8431
     - 8429
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10824
     - 10836
@@ -32,48 +32,49 @@
 - id: 'vriendinnetje'
   name: Vriendin
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
-    - 8292
+    - 8292 # Engelse boeken
     - 4284431352
-    - 3132
-    - 6080
-    - 6196
-    - 6230
-    - 6251
+    - 3132 # muziek totaal
+    - 6080 # Muziek POP
+    - 6196 # Film + tv Humor
+    - 6230 # Film + tv drama en romantiek
+    - 6251 # Film + tv Thrillers & Crime
     - 10508 # handwerken en mode
     - 10511 # Koken en bakken
     - 12383
-    - 12429
-    - 12687
-    - 12441
+    - 12429 # Mooi en gezond Damesgeuren
+    - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
+    - 12441 # Mooi en gezond Geurengeschenksets
     - 4098
     - 8427
     - 8431
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10829
     - 10832
+    - 14768 # Sport - Pilates en Yoga
 
 - id: 'vader'
   name: Voor je vader
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
-    - 8292
+    - 8292 # Engelse boeken
     - 4294754280
-    - 6080
-    - 6142
+    - 6080 # Muziek POP
+    - 6142 # Film + tv Actie en Avontuur
     - 6158
-    - 6196
+    - 6196 # Film + tv Humor
     - 10579
     - 10596
-    - 12432
+    - 12432 # Mooi en gezond Herengeuren
     - 11773
     - 11785
     - 11826
     - 8429
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10824
     - 10836
@@ -90,29 +91,29 @@
 - id: 'moeder'
   name: Voor je moeder
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
-    - 8292
-    - 6080
-    - 6177
-    - 6196
-    - 6230
-    - 6251
+    - 8292 # Engelse boeken
+    - 6080 # Muziek POP
+    - 6177 # Film + tv Filmhuis en internationaal
+    - 6196 # Film + tv Humor
+    - 6230 # Film + tv drama en romantiek
+    - 6251 # Film + tv Thrillers & Crime
     - 10508 # handwerken en mode
     - 10511 # Koken en bakken
     - 10506 # Boetseren en vormgeven
     - 10564 # legpuzzels
     - 12383
-    - 12429
-    - 12687
-    - 12441
+    - 12429 # Mooi en gezond Damesgeuren
+    - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
+    - 12441 # Mooi en gezond Geurengeschenksets
     - 11773
     - 11785
     - 11826
     - 11922
     - 11927
     - 11888
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10829
     - 10832
@@ -121,29 +122,30 @@
     - 10799
     - 10802
     - 10800
+    - 14768 # Sport - Pilates en Yoga
 
 - id: 'broertje'
   name: Voor je broertje
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
-    - 8292
+    - 8292 # Engelse boeken
     - 4294754280
-    - 3132
-    - 6142
-    - 6196
-    - 11551
-    - 11642
-    - 5201
-    - 10500
+    - 3132 # muziek totaal
+    - 6142 # Film + tv Actie en Avontuur
+    - 6196 # Film + tv Humor
+    - 11551 # Games XBOX One
+    - 11642 # Games Playstaytion 4
+    - 5201 # Games PC
+    - 10500 # Speelgoed Electronisch speelgoed
     - 10579
     - 10596
-    - 12432
+    - 12432 # Mooi en gezond Herengeuren
     - 4098
     - 8427
     - 8431
     - 8429
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10824
     - 10836
@@ -155,28 +157,29 @@
 - id: 'zusje'
   name: Voor je zusje
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
-    - 8292
+    - 8292 # Engelse boeken
     - 4284431352
-    - 3132
-    - 6080
-    - 6196
-    - 6230
+    - 3132 # muziek totaal
+    - 6080 # Muziek POP
+    - 6196 # Film + tv Humor
+    - 6230 # Film + tv drama en romantiek
     - 10508 # handwerken en mode
     - 10511 # Koken en bakken
     - 10506 # Boetseren en vormgeven
     - 12383
-    - 12429
-    - 12687
-    - 12441
+    - 12429 # Mooi en gezond Damesgeuren
+    - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
+    - 12441 # Mooi en gezond Geurengeschenksets
     - 4098
     - 8427
     - 8431
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10829
     - 10832
+    - 14768 # Sport - Pilates en Yoga
 
 - id: 'baby'
   name: Voor een baby
@@ -191,7 +194,7 @@
 - id: 'oma'
   name: Voor je oma
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
     - 6046
     - 10508 # handwerken en mode
@@ -199,16 +202,16 @@
     - 10506 # Boetseren en vormgeven
     - 10564 # legpuzzels
     - 12383
-    - 12429
-    - 12687
-    - 12441
+    - 12429 # Mooi en gezond Damesgeuren
+    - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
+    - 12441 # Mooi en gezond Geurengeschenksets
     - 11773
     - 11785
     - 11826
     - 11922
     - 11927
     - 11888
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10829
     - 10832
@@ -221,16 +224,16 @@
 - id: 'opa'
   name: Voor je opa
   categories:
-    - 8293
+    - 8293 # taal - nederlandse boeken
     - 19
     - 4294754280
     - 6046
     - 10564 # legpuzzels
-    - 12432
+    - 12432 # Mooi en gezond Herengeuren
     - 11773
     - 11785
     - 11826
-    - 4070
+    - 4070 # Digitale fotografie - digitale camera's
     - 10661
     - 10824
     - 10836
