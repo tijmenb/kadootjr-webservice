@@ -4,6 +4,7 @@
     - 8293 # taal - nederlandse boeken
     - 19
     - 8292 # Engelse boeken
+    - 105 # Boeken - Reisgidsen
     - 4294754280
     - 3132 # muziek totaal
     - 6080 # Muziek POP
@@ -35,6 +36,7 @@
     - 8293 # taal - nederlandse boeken
     - 19
     - 8292 # Engelse boeken
+    - 105 # Boeken - Reisgidsen
     - 4284431352
     - 3132 # muziek totaal
     - 6080 # Muziek POP
@@ -62,6 +64,7 @@
     - 8293 # taal - nederlandse boeken
     - 19
     - 8292 # Engelse boeken
+    - 105 # Boeken - Reisgidsen
     - 4294754280
     - 6080 # Muziek POP
     - 6142 # Film + tv Actie en Avontuur
@@ -70,8 +73,12 @@
     - 10579
     - 10596
     - 12432 # Mooi en gezond Herengeuren
+    - 11897 # koken en tafelen - Wijn en bar - Thuistappen
+    - 11772 # koken en tafelen - Barbecues
     - 11773
     - 11785
+    - 11897 # koken en tafelen - Wijn en bar - Wijnrekken
+    - 11962 # elektronica -keukenapparaten-bak-grillplaten - grillplaten
     - 11826
     - 8429
     - 4070 # Digitale fotografie - digitale camera's
@@ -94,6 +101,10 @@
     - 8293 # taal - nederlandse boeken
     - 19
     - 8292 # Engelse boeken
+    - 263 # Boeken - Wonen en Tuinieren
+    - 105 # Boeken - Reisgidsen
+    - 32 # Boeken - Bekende koks
+    - 31 # Boeken - Kookboeken
     - 6080 # Muziek POP
     - 6177 # Film + tv Filmhuis en internationaal
     - 6196 # Film + tv Humor
@@ -107,6 +118,13 @@
     - 12429 # Mooi en gezond Damesgeuren
     - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
     - 12441 # Mooi en gezond Geurengeschenksets
+    - 11900 # koken en tafelen - Wijn en bar - Decanteerkarraffen
+    - 11907 # koken en tafelen - Wijn en bar - Wijnglazen
+    - 11897 # koken en tafelen - Wijn en bar - Wijnkoelers
+    - 11897 # koken en tafelen - Wijn en bar - Wijnrekken
+    - 11903 # koken en tafelen - Wijn en bar - Openers
+    - 11926 # koken en tafelen - Tafellakens
+    - 11962 # elektronica -keukenapparaten-bak-grillplaten - grillplaten
     - 11773
     - 11785
     - 11826
@@ -130,6 +148,7 @@
     - 8293 # taal - nederlandse boeken
     - 19
     - 8292 # Engelse boeken
+    - 105 # Boeken - Reisgidsen
     - 4294754280
     - 3132 # muziek totaal
     - 6142 # Film + tv Actie en Avontuur
@@ -141,6 +160,7 @@
     - 10579
     - 10596
     - 12432 # Mooi en gezond Herengeuren
+    - 11897 # koken en tafelen - Wijn en bar - Thuistappen
     - 4098
     - 8427
     - 8431
@@ -160,6 +180,7 @@
     - 8293 # taal - nederlandse boeken
     - 19
     - 8292 # Engelse boeken
+    - 105 # Boeken - Reisgidsen
     - 4284431352
     - 3132 # muziek totaal
     - 6080 # Muziek POP
@@ -172,6 +193,8 @@
     - 12429 # Mooi en gezond Damesgeuren
     - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
     - 12441 # Mooi en gezond Geurengeschenksets
+    - 11907 # koken en tafelen - Wijn en bar - Wijnglazen
+    - 11897 # koken en tafelen - Wijn en bar - Wijnrekken
     - 4098
     - 8427
     - 8431
@@ -187,14 +210,17 @@
     - 10528
     - 10535
     - 10477
-    - 11299
-    - 11285
+    - 11299 # Baby Babykamer hemeltjes
+    - 11285 # Baby Speelgoed voor onderweg
     - 7195
 
 - id: 'oma'
   name: Voor je oma
   categories:
     - 8293 # taal - nederlandse boeken
+    - 32 # Boeken - Bekende koks
+    - 31 # Boeken - Kookboeken
+    - 263 # Boeken - Wonen en Tuinieren
     - 19
     - 6046
     - 10508 # handwerken en mode
@@ -206,6 +232,7 @@
     - 12687 # Mooi en gezond Persoonlijke verzorging geschenksets
     - 12441 # Mooi en gezond Geurengeschenksets
     - 11773
+    - 11926 # koken en tafelen - Tafellakens
     - 11785
     - 11826
     - 11922
@@ -225,11 +252,14 @@
   name: Voor je opa
   categories:
     - 8293 # taal - nederlandse boeken
+    - 105 # Boeken - Reisgidsen
     - 19
     - 4294754280
     - 6046
     - 10564 # legpuzzels
     - 12432 # Mooi en gezond Herengeuren
+    - 11897 # koken en tafelen - Wijn en bar - Thuistappen
+    - 11772 # koken en tafelen - Barbecues
     - 11773
     - 11785
     - 11826
@@ -242,6 +272,34 @@
     - 10799
     - 10802
     - 10800
+    - 11962 # elektronica -keukenapparaten-bak-grillplaten - grillplaten
+
+- id: 'huwelijk'
+  name: Huwelijkscadeau
+  categories:
+    - 8293 # taal - nederlandse boeken
+    - 4070 # Digitale fotografie - digitale camera's
+    - 11809 # Kookgerei - Peper en zoutstellen
+    - 11867 # koken en tafelen - kookgerei - Servies
+    - 11877 # koken en tafelen - kookgerei - Bestek
+    - 11768 # koken en tafelen - kookgerei - Pannensets
+    - 11897 # koken en tafelen - Wijn en bar - Thuistappen
+    - 11900 # koken en tafelen - Wijn en bar - Decanteerkarraffen
+    - 11907 # koken en tafelen - Wijn en bar - Wijnglazen
+    - 11897 # koken en tafelen - Wijn en bar - Wijnkoelers
+    - 11897 # koken en tafelen - Wijn en bar - Wijnrekken
+    - 11903 # koken en tafelen - Wijn en bar - Openers
+    - 11926 # koken en tafelen - Tafellakens
+    - 11945 # koken en tafelen - esspressomachine
+    - 11961 # koken en tafelen - gourmetteset
+    - 11772 # koken en tafelen - Barbecues
+    - 11962 # elektronica -keukenapparaten-bak-grillplaten - grillplaten
+    - 32 # Boeken - Bekende koks
+    - 31 # Boeken - Kookboeken
+    - 263 # Boeken - Wonen en Tuinieren
+    - 105 # Boeken - Reisgidsen
+
+    
 
 # - id: 'huwelijk'
 #   name: Een bruidspaar
