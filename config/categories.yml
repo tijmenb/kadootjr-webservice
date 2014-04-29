@@ -1,7 +1,7 @@
 - id: 'vriendje'
   name: Vriend
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
     - 8292 # Engelse boeken
     - 105 # Boeken - Reisgidsen
@@ -33,7 +33,7 @@
 - id: 'vriendinnetje'
   name: Vriendin
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
     - 8292 # Engelse boeken
     - 105 # Boeken - Reisgidsen
@@ -61,7 +61,7 @@
 - id: 'vader'
   name: Voor je vader
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
     - 8292 # Engelse boeken
     - 105 # Boeken - Reisgidsen
@@ -98,7 +98,7 @@
 - id: 'moeder'
   name: Voor je moeder
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
     - 8292 # Engelse boeken
     - 263 # Boeken - Wonen en Tuinieren
@@ -145,7 +145,7 @@
 - id: 'broertje'
   name: Voor je broertje
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
     - 8292 # Engelse boeken
     - 105 # Boeken - Reisgidsen
@@ -177,7 +177,7 @@
 - id: 'zusje'
   name: Voor je zusje
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 19
     - 8292 # Engelse boeken
     - 105 # Boeken - Reisgidsen
@@ -217,7 +217,7 @@
 - id: 'oma'
   name: Voor je oma
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 32 # Boeken - Bekende koks
     - 31 # Boeken - Kookboeken
     - 263 # Boeken - Wonen en Tuinieren
@@ -251,7 +251,7 @@
 - id: 'opa'
   name: Voor je opa
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 105 # Boeken - Reisgidsen
     - 19
     - 4294754280
@@ -277,7 +277,7 @@
 - id: 'huwelijk'
   name: Huwelijkscadeau
   categories:
-    - 8293 # taal - nederlandse boeken
+    - 1430 # Categorie - Nederlandse boeken
     - 4070 # Digitale fotografie - digitale camera's
     - 11809 # Kookgerei - Peper en zoutstellen
     - 11867 # koken en tafelen - kookgerei - Servies
