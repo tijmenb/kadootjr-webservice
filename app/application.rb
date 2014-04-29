@@ -43,6 +43,6 @@ end
 get '/admin/lists/:list_id' do |list_id|
   protected!
   @list_id = list_id
-  @products = ProductList.new(list_id).all_products.take(100)
+  @products = ProductList.new(list_id).all_products.take((params['limit'] || 100).to_i)
   erb :list, layout: :admin
 end
