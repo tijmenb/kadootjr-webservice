@@ -15,7 +15,8 @@ module BolAPI
     def query_for(args)
       default_parameters.merge(
         ids: (args[:category_ids] || []).join(','),
-        limit: 25)
+        limit: 25,
+        includeattributes: 1)
     end
 
     def default_parameters

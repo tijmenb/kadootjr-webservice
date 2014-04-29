@@ -26,4 +26,15 @@ describe BolAPI::Product do
       product.availability_description.should == 'Vandaag besteld, woensdag in huis'
     end
   end
+
+  describe ".initialize with a music CD" do
+    let :product do
+      product_data = JSON.parse(File.read("spec/fakeweb_responses/muziek_product.json"))
+      BolAPI::Product.new(product_data)
+    end
+
+    it "it's title is cool" do
+      product.title.should == 'By Absence Of The Sun - Triggerfinger'
+    end
+  end
 end

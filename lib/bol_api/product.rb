@@ -3,8 +3,8 @@ require 'uri'
 
 module BolAPI
   class Product
-    EASY_ATTRIBUTES = %w[id title subtitle summary rating short_description]
-    OTHER_ATTRIBUTES = [:desktop_url, :mobile_url, :image,
+    EASY_ATTRIBUTES = %w[id subtitle summary rating short_description]
+    OTHER_ATTRIBUTES = [:title, :desktop_url, :mobile_url, :image,
       :price, :availability_description, :available, :product_type]
 
     attr_accessor *EASY_ATTRIBUTES
@@ -16,6 +16,7 @@ module BolAPI
     def initialize(data)
       @data = data
       parse_common_attributes
+      parse_title
       parse_urls
       parse_images
       parse_offers
@@ -36,6 +37,17 @@ module BolAPI
       end
 
       @product_type = data['gpc']
+    end
+
+    def parse_title
+      @title = data['title']
+
+      # als er een artiesten entity in zit, dan is het misschien wel een CD
+      maybe_title_artist = data['entityGroups'] && data['entityGroups'].find { |eg| eg['title'] == 'Artiesten' }
+
+      if maybe_title_artist
+        @title = title + " - " + maybe_title_artist['entities'].first['value']
+      end
     end
 
     def parse_urls
