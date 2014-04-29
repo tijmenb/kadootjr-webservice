@@ -19,8 +19,7 @@ class ProductList
         title: product['title'],
         description: product['short_description'],
         price: product['price'].to_f,
-        mobile_url: affillize_url(product['mobile_url']),
-        desktop_url: affillize_url(product['desktop_url']),
+        url: shortlink_url(product['id']),
         image_url: product['image'],
       }
     end
@@ -57,9 +56,8 @@ class ProductList
     Group.all.find { |g| g['id'].to_s == group_id }['categories']
   end
 
-  def affillize_url(url)
-    partner_id = 21278
-    url_encoded_url = URI.escape(url).gsub(":", "%3A")
-    "http://partnerprogramma.bol.com/click/click?p=1&t=url&s=#{partner_id}&url=#{url_encoded_url}&f=TXL"
+  def shortlink_url(product_id)
+    id = product_id.to_i.to_s(36)
+    "http://tips.kadootjr.nl/#{id}"
   end
 end
