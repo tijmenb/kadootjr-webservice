@@ -15,5 +15,5 @@ FakeWeb.register_uri(:get,
   body: File.read("spec/fakeweb_responses/search.json"))
 
 FakeWeb.register_uri(:get,
-  "https://api.bol.com/catalog/v4/lists/?apikey=40E2DCA27B6C4027B5DED2DCC2ACEF20&format=json&dataoutput=products&ids=12&limit=100",
+  "https://api.bol.com/catalog/v4/lists/?apikey=XXX&format=json&dataoutput=products&ids=1&limit=25",
   body: File.read("spec/fakeweb_responses/search.json"))
