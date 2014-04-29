@@ -20,7 +20,10 @@
   <tr>
     <td><%= i + 1 %></td>
     <td><img src='<%= product['image'] %>' style='width: 100px'/></td>
-    <td><%= product['title'] %></td>
+    <td>
+      <h3><%= product['title'] %></h3>
+      <a href="http://tips.kadootjr.nl/<%= product['id'].to_i.to_s(36) %>-s" target="_blank">http://tips.kadootjr.nl/<%= product['id'].to_i.to_s(36) %>-s</a>
+    </td>
     <td><%= product['rating'] %></td>
     <td><%= product['price'] %></td>
     <td><%= Redis.current.zscore("kadootjr-group:#{@list_id}:ratings", product['id']).to_i %></td>

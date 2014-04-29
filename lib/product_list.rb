@@ -20,7 +20,7 @@ class ProductList
         description: product['short_description'],
         price: product['price'].to_f,
         url: shortlink_url(product['id']),
-        image_url: product['image'],
+        image_url: product['image']
       }
     end
   end
