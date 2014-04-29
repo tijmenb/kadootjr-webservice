@@ -16,7 +16,8 @@ module BolAPI
       default_parameters.merge(
         ids: (args[:category_ids] || []).join(','),
         limit: 25,
-        includeattributes: 1)
+        includeattributes: 1,
+        sort: 'rankdesc')
     end
 
     def default_parameters
