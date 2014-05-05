@@ -32,7 +32,7 @@ end
 
 describe "POST /swipes" do
   it "saves the swipe to Redis" do
-    post '/swipes', JSON.dump('group_id' => 1)
+    post '/swipes', JSON.dump({ swipes: ['group_id' => 1] })
     expect(response_data).to eq("message"=>"OK")
   end
 end

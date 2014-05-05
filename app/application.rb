@@ -30,8 +30,10 @@ get '/lists/:list_id' do |list_id|
 end
 
 post '/swipes' do
-  swipe =  JSON.parse(request.body.read)
-  SwipeCreator.new(swipe).create
+  data = JSON.parse(request.body.read)
+  data['swipes'].each do |swipe|
+    SwipeCreator.new(swipe).create
+  end
   json(message: 'OK')
 end
 
