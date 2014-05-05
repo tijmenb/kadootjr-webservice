@@ -16,23 +16,23 @@ RSpec.configure do |config|
   config.include Helpers
 end
 
-describe 'GET /lists' do
+describe 'GET /v1/lists' do
   it "it returns an array of groups" do
-    get '/lists'
+    get '/v1/lists'
     expect(response_data).to be_a(Array)
   end
 end
 
-describe "GET /groups/:id/presents" do
+describe "GET /v1/lists" do
   it "returns presents from Bol.com" do
-    get '/lists/1'
+    get '/v1/lists/1'
     expect(response_data).to be_a(Array)
   end
 end
 
-describe "POST /swipes" do
+describe "POST /v1/swipes" do
   it "saves the swipe to Redis" do
-    post '/swipes', JSON.dump({ swipes: ['group_id' => 1] })
+    post '/v1/swipes', JSON.dump({ swipes: ['group_id' => 1] })
     expect(response_data).to eq("message"=>"OK")
   end
 end

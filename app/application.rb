@@ -12,24 +12,24 @@ require './config/configuration'
 require './app/helpers'
 
 get '/' do
-  json(lists_url: "http://#{request.host}:#{request.port}/lists")
+  json(lists_url: "http://#{request.host}:#{request.port}/v1/lists")
 end
 
-get '/lists' do
+get '/v1/lists' do
   data = Group.all.map do |group|
     { id: group['id'].to_s,
       name: group['name'],
-      url: "http://#{request.host}:#{request.port}/lists/#{group['id']}" }
+      url: "http://#{request.host}:#{request.port}/v1/lists/#{group['id']}" }
   end
 
   json data
 end
 
-get '/lists/:list_id' do |list_id|
+get '/v1/lists/:list_id' do |list_id|
   json ProductList.new(list_id).paginated_products(params['page'] || 0)
 end
 
-post '/swipes' do
+post '/v1/swipes' do
   data = JSON.parse(request.body.read)
   data['swipes'].each do |swipe|
     SwipeCreator.new(swipe).create
