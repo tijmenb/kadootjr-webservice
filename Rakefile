@@ -6,8 +6,6 @@ require './lib/group'
 
 desc 'Importeer alle initial categories (duurt lang)'
 task :import_initial do
-  Redis.current.flushdb
-
   Group.all.map do |group|
     importer = ProductImporter.new(group['id'])
 
