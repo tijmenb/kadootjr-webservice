@@ -3,6 +3,7 @@ Dotenv.load
 
 require './lib/group'
 require './lib/product_syncer'
+require './lib/product_list'
 
 namespace :products do
   desc 'Importeer alle initial categories (duurt lang)'
@@ -13,18 +14,18 @@ namespace :products do
 
   desc 'Update all products'
   task :update do
-    ProductSyncer.new.update
-  end
-
-  desc 'Update a group'
-  task :update_group do
-    ProductSyncer.new.update_group(ENV['GROUP'] || ENV['GROUP_ID'])
+    group = ENV['GROUP'] || ENV['GROUP_ID']
+    if group
+      ProductSyncer.new.update_group(group)
+    else
+      ProductSyncer.new.update
+    end
   end
 
   desc 'List all ignored products'
   task :list_ignored do
     ignored = ProductList.new(ENV['GROUP']).ignored_products.map { |p|
-      p['title'] + " - " + p['rating'] + " - " + p['available'] + " - " + p['price']
+      { p['title'] => p }
     }
 
     puts "Ignored in category: #{ignored.count}\n"

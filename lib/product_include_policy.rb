@@ -13,7 +13,7 @@ class ProductIncludePolicy
 
   def includeable?
     available? &&
-    rating_okay? &&
+    # rating_okay? &&
     price_okay? &&
     words_okay? &&
     true
