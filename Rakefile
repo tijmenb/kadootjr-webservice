@@ -22,7 +22,7 @@ namespace :products do
   end
 
   desc 'List all ignored products'
-  task :ignored_products do
+  task :list_ignored do
     ignored = ProductList.new(ENV['GROUP']).ignored_products.map { |p|
       p['title'] + " - " + p['rating'] + " - " + p['available'] + " - " + p['price']
     }
