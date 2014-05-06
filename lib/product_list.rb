@@ -38,10 +38,9 @@ class ProductList
   private
 
   def selected_products
-    raw_products.flatten
-    # raw_products.flatten.select do |product|
-    #   ProductIncludePolicy.new(product).includeable?
-    # end
+    raw_products.flatten.select do |product|
+      ProductIncludePolicy.new(product).includeable?
+    end
   end
 
   def raw_products
