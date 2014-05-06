@@ -1,30 +1,33 @@
 require 'dotenv'
 Dotenv.load
 
-require './lib/product_importer'
 require './lib/group'
-require './lib/product_list'
+require './lib/product_syncer'
 
-desc 'Importeer alle initial categories (duurt lang)'
-task :import_initial do
-  Group.all.map do |group|
-    importer = ProductImporter.new(group['id'])
-
-    products = group['categories'].map do |category_id|
-      puts "Downloading ##{category_id} (#{group['name']}) from Bol.com"
-      importer.products(category_id)
-    end.flatten.uniq.shuffle
-
-    puts "Putting #{products.size} products in de database"
-    importer.add_or_update_products(products)
+namespace :products do
+  desc 'Importeer alle initial categories (duurt lang)'
+  task :reset do
+    Redis.current.flushdb
+    ProductSyncer.new.update
   end
-end
 
-task :ignored_products do
-  ignored = ProductList.new(ENV['GROUP']).ignored_products.map { |p|
-    p['title'] + " - " + p['rating'] + " - " + p['available'] + " - " + p['price']
-  }
+  desc 'Update all products'
+  task :update do
+    ProductSyncer.new.update
+  end
 
-  puts "Ignored in category: #{ignored.count}\n"
-  puts ignored.join("\n")
+  desc 'Update a group'
+  task :update_group do
+    ProductSyncer.new.update_group(ENV['GROUP'] || ENV['GROUP_ID'])
+  end
+
+  desc 'List all ignored products'
+  task :ignored_products do
+    ignored = ProductList.new(ENV['GROUP']).ignored_products.map { |p|
+      p['title'] + " - " + p['rating'] + " - " + p['available'] + " - " + p['price']
+    }
+
+    puts "Ignored in category: #{ignored.count}\n"
+    puts ignored.join("\n")
+  end
 end

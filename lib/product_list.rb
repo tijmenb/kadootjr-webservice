@@ -35,14 +35,6 @@ class ProductList
     end
   end
 
-  private
-
-  def selected_products
-    raw_products.flatten.select do |product|
-      ProductIncludePolicy.new(product).includeable?
-    end
-  end
-
   def raw_products
     Redis.current.zunionstore(combined_key,
       ["kadootjr-group:#{group_id}:swipe-popularity",
@@ -51,6 +43,15 @@ class ProductList
     product_ids = Redis.current.zrevrange(combined_key, 0, -1).to_a
     product_ids.map do |product_id|
       Redis.current.hgetall("kadootjr:product:#{product_id}")
+    end
+  end
+
+
+  private
+
+  def selected_products
+    raw_products.flatten.select do |product|
+      ProductIncludePolicy.new(product).includeable?
     end
   end
 
