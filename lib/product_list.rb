@@ -29,6 +29,12 @@ class ProductList
     selected_products
   end
 
+  def ignored_products
+    raw_products.flatten.reject do |product|
+      ProductIncludePolicy.new(product).includeable?
+    end
+  end
+
   private
 
   def selected_products

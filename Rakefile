@@ -3,6 +3,7 @@ Dotenv.load
 
 require './lib/product_importer'
 require './lib/group'
+require './lib/product_list'
 
 desc 'Importeer alle initial categories (duurt lang)'
 task :import_initial do
@@ -17,4 +18,13 @@ task :import_initial do
     puts "Putting #{products.size} products in de database"
     importer.add_or_update_products(products)
   end
+end
+
+task :ignored_products do
+  ignored = ProductList.new(ENV['GROUP']).ignored_products.map { |p|
+    p['title'] + " - " + p['rating'] + " - " + p['available'] + " - " + p['price']
+  }
+
+  puts "Ignored in category: #{ignored.count}\n"
+  puts ignored.join("\n")
 end
