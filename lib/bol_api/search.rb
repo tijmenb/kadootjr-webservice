@@ -5,7 +5,6 @@ module BolAPI
     def search(args)
       response = HTTParty.get('https://api.bol.com/catalog/v4/lists/', query: query_for(args))
       parsed = JSON.parse(response.body)
-
       raise_api_error(response) unless response.code == 200
       objectify_products(parsed['products'])
     end
@@ -16,8 +15,8 @@ module BolAPI
       default_parameters.merge(
         ids: (args[:category_ids] || []).join(','),
         limit: 25,
-        includeattributes: 1,
-        sort: 'rankdesc')
+        includeattributes: 1)
+        # sort is rankdesc, maar er zit een bug bij Bol.com
     end
 
     def default_parameters

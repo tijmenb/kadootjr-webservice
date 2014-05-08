@@ -1,6 +1,7 @@
 require 'dotenv'
 Dotenv.load
 
+require 'pp'
 require './lib/group'
 require './lib/product_syncer'
 require './lib/product_list'
@@ -30,5 +31,16 @@ namespace :products do
 
     puts "Ignored in category: #{ignored.count}\n"
     puts ignored.join("\n")
+  end
+
+  desc 'Download a category'
+  task :download do
+    category = ENV['CATEGORY']
+    products = BolAPI::Client.new(ENV['BOL_KEY']).search(category_ids: [category])
+    hashes = products.map do |p|
+      [p.id, p.title, p.rating, p.available]
+    end
+
+    pp hashes
   end
 end

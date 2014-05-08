@@ -9,6 +9,8 @@ gem 'sinatra-contrib'
 gem 'redis'
 gem 'newrelic_rpm'
 
+gem 'awesome_print'
+
 # develop:
 gem 'shotgun'
 gem 'rspec'
