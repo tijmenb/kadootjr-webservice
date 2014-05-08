@@ -5,7 +5,7 @@ require './lib/group'
 class ProductSyncer
   def update
     Group.all.map do |group|
-      update_group(group)
+      update_group(group['id'])
     end
   end
 
