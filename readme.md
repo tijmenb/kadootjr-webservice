@@ -25,7 +25,7 @@ Returns alle lijsten voor Kadootjr.
 #### List object
 
 Key | Value | Desc
-------------- | -------------
+------------- | ------------- | -------------
 `id` | string | ID van de lijst, blijft altijd hetzelfde
 `name` | string | blijft altijd hetzelfde
 `url` | string | API URL van de lijst, voor development.
@@ -61,7 +61,7 @@ Returns alle producten in een bepaalde lijst.
 #### Product object
 
 Key | Value | Desc
-------------- | -------------
+------------- | ------------- | -------------
 `id` | string | Bol.com ID van het product
 `title` | string | Titel van product
 `url` | string | Omschrijving van product van Bol. Zit tjokvol HTML-troep.
@@ -92,7 +92,7 @@ Alles goed? Dan krijg je `200` en `{ "message": "OK" }` terug.
 #### Params voor een swipe object
 
 Param | Type | Desc
-------------- | -------------
+------------- | ------------- | -------------
 `group_id` | string | De ID van de lijst/groep (eg. `oma`, `opa`, `vriendje`)
 `product_id` | string | Bol.com product ID
 `direction` | string | `added` of `rejected`
