@@ -28,7 +28,7 @@ Key | Value | Desc
 ------------- | ------------- | -------------
 `id` | string | ID van de lijst, blijft altijd hetzelfde
 `name` | string | blijft altijd hetzelfde
-`url` | string | API URL van de lijst, voor development.
+`url` | url | API URL van de lijst, voor development.
 
 ## `GET /v1/lists/:id?page=0`
 
@@ -64,10 +64,10 @@ Key | Value | Desc
 ------------- | ------------- | -------------
 `id` | string | Bol.com ID van het product
 `title` | string | Titel van product
-`url` | string | Omschrijving van product van Bol. Zit tjokvol HTML-troep.
+`description` | string | Omschrijving van product van Bol. Zit tjokvol HTML-troep.
 `price` | float | Meest actuele prijs van Bol.
 `url` | url | Affiliate URL naar de Kadootjr-redirector
-`image_url` | url | URL van de grootst mogelijke afbeelding bij Bol. Geen garanties over de size.
+`image_url` | url | URL van de grootst mogelijke afbeelding bij Bol. Geen garanties over size/kwaliteit.
 
 
 #### Params
@@ -75,6 +75,21 @@ Key | Value | Desc
 Param | Desc
 ------------- | -------------
 `page` (optional, default: 0) | Voor de paging.
+
+#### Kadootjr-redirector URL
+
+`tips.kadootjr.nl` stuurt users direct door naar Bol.com, met de goede affiliate-link. Om onderscheid te maken in de affiliate-inkomsten, krijgt een de links een suffix met de afzender.
+
+Dit zijn de opties:
+
+```sh
+http://tips.kadootjr.nl/2il4lnt8iy0-s # afkomstig van de website
+http://tips.kadootjr.nl/2il4lnt8iy0-i # afkomstig van iOS app
+http://tips.kadootjr.nl/2il4lnt8iy0-a # afkomstig van Android app
+http://tips.kadootjr.nl/2il4lnt8iy0-w # afkomstig van Windows Phone app
+```
+
+Als er geen suffix aanwezig is, wordt de user geredirect met de identifier `other` en weten we niet waar het vandaan komt.
 
 
 ## `POST /swipes`
