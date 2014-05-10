@@ -11,5 +11,5 @@ FakeWeb.allow_net_connect = false
 Encoding.default_external = Encoding::UTF_8
 
 FakeWeb.register_uri(:get,
-  "https://api.bol.com/catalog/v4/lists/?apikey=XXX&format=json&dataoutput=products&ids=1&limit=25&includeattributes=1&sort=rankdesc",
+  "https://api.bol.com/catalog/v4/lists/?apikey=XXX&format=json&dataoutput=products&ids=1&limit=25&includeattributes=1",
   body: File.read("spec/fakeweb_responses/search.json"))

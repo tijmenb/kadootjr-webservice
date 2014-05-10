@@ -31,9 +31,13 @@ end
 
 post '/v1/swipes' do
   data = JSON.parse(request.body.read)
-  data['swipes'].each do |swipe|
-    SwipeCreator.new(swipe).create
+
+  Redis.current.pipelined do
+    data['swipes'].each do |swipe|
+      SwipeCreator.new(swipe).create
+    end
   end
+
   json(message: 'OK')
 end
 
