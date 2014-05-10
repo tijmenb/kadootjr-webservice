@@ -11,6 +11,8 @@ require './lib/swipe_creator'
 require './config/configuration'
 require './app/helpers'
 
+newrelic_ignore '/admin'
+
 get '/' do
   json(lists_url: "http://#{request.host}:#{request.port}/v1/lists")
 end
