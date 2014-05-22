@@ -11,7 +11,9 @@ require './lib/swipe_creator'
 require './config/configuration'
 require './app/helpers'
 
-newrelic_ignore '/admin'
+if ENV['RACK_ENV'] == 'production'
+  newrelic_ignore '/admin'
+end
 
 get '/' do
   json(lists_url: "http://#{request.host}:#{request.port}/v1/lists")

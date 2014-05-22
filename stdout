@@ -1,0 +1,2 @@
+[90106] 22 May 18:14:00.682 * Increased maximum number of open files to 10032 (it was originally set to 256).
+[90106] 22 May 18:14:00.683 # Creating Server TCP listening socket *:6379: bind: Address already in use
