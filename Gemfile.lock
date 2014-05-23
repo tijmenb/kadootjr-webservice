@@ -7,6 +7,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    appsignal (0.8.11)
+      activesupport (>= 3.0)
+      rack
+      thread_safe
     awesome_print (1.2.0)
     backports (3.6.0)
     daemons (1.1.9)
@@ -64,6 +68,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  appsignal
   awesome_print
   dotenv
   fakeweb (~> 1.3)

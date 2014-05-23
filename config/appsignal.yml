@@ -1,0 +1,11 @@
+default: &defaults
+  push_api_key: ENV['APPSIGNAL_KEY']
+  name: "Kadootjr Webservice"
+
+development:
+  <<: *defaults
+  active: true
+
+production:
+  <<: *defaults
+  active: true

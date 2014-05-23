@@ -1,6 +1,8 @@
 require 'dotenv'
 Dotenv.load
 
+require 'appsignal'
+
 require 'sinatra'
 require 'json'
 require 'sinatra/json'
