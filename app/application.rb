@@ -5,6 +5,7 @@ require 'sinatra'
 require 'json'
 require 'sinatra/json'
 
+require './lib/cache'
 require './lib/group'
 require './lib/product_list'
 require './lib/swipe_creator'
@@ -30,7 +31,14 @@ get '/v1/lists' do
 end
 
 get '/v1/lists/:list_id' do |list_id|
-  json ProductList.new(list_id).paginated_products(params['page'] || 0)
+  page_id = params['page'] || 0
+  key = "kadootjr:products:#{list_id}/#{page_id}"
+
+  products = Cache.fetch(key) do
+    ProductList.new(list_id).paginated_products(page_id)
+  end
+
+  json products
 end
 
 post '/v1/swipes' do

@@ -24,7 +24,13 @@ describe 'GET /v1/lists' do
 end
 
 describe "GET /v1/lists" do
-  it "returns presents from Bol.com" do
+  it "returns products from Bol.com" do
+    get '/v1/lists/1'
+    expect(response_data).to be_a(Array)
+  end
+
+  it "returns products from Bol.com cached" do
+    get '/v1/lists/1'
     get '/v1/lists/1'
     expect(response_data).to be_a(Array)
   end
