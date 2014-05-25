@@ -30,7 +30,7 @@ Key | Value | Desc
 `name` | string | blijft altijd hetzelfde
 `url` | url | API URL van de lijst, voor development.
 
-## `GET /v1/lists/:id?page=0`
+## `GET /v1/lists/:id?page=0&limit=25`
 
 Returns alle producten in een bepaalde lijst.
 
@@ -74,7 +74,8 @@ Key | Value | Desc
 
 Param | Desc
 ------------- | -------------
-`page` (optional, default: 0) | Voor de paging.
+`page` (optional, default: 0) | Welke pagina
+`limit` (optional, default: 25) | Hoeveel resultaten
 
 #### Kadootjr-redirector URL
 
