@@ -1,5 +1,8 @@
 module Cache
-  def self.fetch(key, &block)
+  CACHE_INTERVAL = 60 # seconds
+
+  def self.fetch(composed_key, &block)
+    key = ["cache", composed_key].flatten.join(':')
     data = get(key)
 
     if !data
@@ -17,6 +20,13 @@ module Cache
 
   def self.set(key, data)
     Redis.current.set(key, JSON.dump(data))
-    Redis.current.expire(key, 60)
+    Redis.current.expire(key, CACHE_INTERVAL)
+  end
+
+  def self.clear
+    Redis.current.keys("cache:*").each do |key|
+      puts "Removing #{key}"
+      Redis.current.del(key)
+    end
   end
 end

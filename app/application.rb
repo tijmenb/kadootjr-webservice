@@ -34,9 +34,8 @@ end
 
 get '/v1/lists/:list_id' do |list_id|
   page_id = params['page'] || 0
-  key = "kadootjr:products:#{list_id}/#{page_id}"
 
-  products = Cache.fetch(key) do
+  products = Cache.fetch([list_id, page_id]) do
     ProductList.new(list_id).paginated_products(page_id)
   end
 
