@@ -7,9 +7,7 @@ gem 'thin'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'redis'
-
 gem 'newrelic_rpm'
-gem 'appsignal'
 
 gem 'awesome_print'
 
