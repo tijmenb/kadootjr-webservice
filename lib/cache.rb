@@ -1,5 +1,5 @@
 module Cache
-  CACHE_INTERVAL = 60 # seconds
+  CACHE_INTERVAL = 60 * 60 # 1 hour
 
   def self.fetch(composed_key, &block)
     key = ["cache", composed_key].flatten.join(':')

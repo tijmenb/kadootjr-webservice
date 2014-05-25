@@ -1,20 +1,16 @@
 require './lib/product_include_policy'
 
 class ProductList
-  PER_PAGE = 25
-
   attr_reader :group_id
 
   def initialize(group_id)
     @group_id = group_id
   end
 
-  def paginated_products(page)
-    page = page.to_i
-    start = page * PER_PAGE
-    ending = start + PER_PAGE-1
+  def paginated_products(page, per_page)
+    start, ending = paging(page, per_page)
 
-    selected_products[start..ending].to_a.reverse.map do |product|
+    selected_products[start..ending].map do |product|
       { id: product['id'],
         title: product['title'],
         description: product['short_description'],
@@ -23,6 +19,12 @@ class ProductList
         image_url: product['image']
       }
     end
+  end
+
+  def paging(page, items_per_page)
+    start  = page * items_per_page
+    ending = start + items_per_page - 1
+    [start, ending]
   end
 
   def all_products
@@ -46,12 +48,13 @@ class ProductList
     end
   end
 
-
   private
 
   def selected_products
-    raw_products.flatten.select do |product|
-      ProductIncludePolicy.new(product).includeable?
+    Cache.fetch(["product-list", group_id]) do
+      raw_products.flatten.select do |product|
+        ProductIncludePolicy.new(product).includeable?
+      end
     end
   end
 

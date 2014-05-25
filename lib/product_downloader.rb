@@ -1,7 +1,7 @@
 require 'json'
 require './lib/bol_api'
 
-# Importeer een Bol.com categorie in Redis
+# Download een Bol category
 class ProductDownloader
   attr_reader :group
 

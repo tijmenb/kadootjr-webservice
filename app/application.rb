@@ -31,12 +31,9 @@ get '/v1/lists' do
 end
 
 get '/v1/lists/:list_id' do |list_id|
-  page_id = params['page'] || 0
-
-  products = Cache.fetch([list_id, page_id]) do
-    ProductList.new(list_id).paginated_products(page_id)
-  end
-
+  page_id = (params['page'] || 0).to_i
+  per_page = (params['limit'] || 25).to_i
+  products = ProductList.new(list_id).paginated_products(page_id, per_page)
   json products
 end
 
