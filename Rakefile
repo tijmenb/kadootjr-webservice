@@ -7,6 +7,10 @@ require './lib/product_syncer'
 require './lib/product_list'
 require './lib/cache'
 
+task :deploy do
+  `git push && git push heroku master:master && heroku run rake cache:clear`
+end
+
 namespace :cache do
   desc 'Clear de cache'
   task :clear do
