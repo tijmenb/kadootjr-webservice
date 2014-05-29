@@ -1,5 +1,6 @@
 deployment:
   staging:
     branch: master
-    heroku:
-      appname: kadootjr-webservice
+    commands:
+      - git push git@heroku.com:kadootjr-ws.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake cache:clear --app kadootjr-ws
