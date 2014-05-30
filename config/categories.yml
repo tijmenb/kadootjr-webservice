@@ -59,7 +59,7 @@
     - 14768 # Sport - Pilates en Yoga
 
 - id: 'vader'
-  name: Voor je vader
+  name: Vader
   categories:
     - 1430 # Categorie - Nederlandse boeken
     - 19
@@ -96,7 +96,7 @@
     - 10732
 
 - id: 'moeder'
-  name: Voor je moeder
+  name: Moeder
   categories:
     - 1430 # Categorie - Nederlandse boeken
     - 19
@@ -175,7 +175,7 @@
     - 10732
 
 - id: 'zusje'
-  name: Voor je zusje
+  name: Zusje
   categories:
     - 1430 # Categorie - Nederlandse boeken
     - 19
@@ -205,7 +205,7 @@
     - 14768 # Sport - Pilates en Yoga
 
 - id: 'baby'
-  name: Voor een baby
+  name: Een baby
   categories:
     - 10528
     - 10535
@@ -215,7 +215,7 @@
     - 7195
 
 - id: 'oma'
-  name: Voor je oma
+  name: Oma
   categories:
     - 1430 # Categorie - Nederlandse boeken
     - 32 # Boeken - Bekende koks
@@ -249,7 +249,7 @@
     - 10800
 
 - id: 'opa'
-  name: Voor je opa
+  name: Opa
   categories:
     - 1430 # Categorie - Nederlandse boeken
     - 105 # Boeken - Reisgidsen
