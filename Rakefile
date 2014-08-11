@@ -21,12 +21,14 @@ end
 namespace :products do
   desc 'Importeer alle initial categories (duurt lang)'
   task :reset do
+    Cache.clear
     Redis.current.flushdb
     ProductSyncer.new.update
   end
 
   desc 'Update all products'
   task :update do
+    Cache.clear
     group = ENV['GROUP'] || ENV['GROUP_ID']
     if group
       ProductSyncer.new.update_group(group)
