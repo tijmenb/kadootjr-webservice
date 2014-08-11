@@ -5,6 +5,7 @@ class ProductIncludePolicy
 
   BAD_WORDS = YAML.load_file("config/banned_words.yml")
   MINIMUM_PRICE = 5
+  MAXIMUM_PRICE = 60
   MINIMUM_RATING = 1
 
   def initialize(product)
@@ -13,7 +14,6 @@ class ProductIncludePolicy
 
   def includeable?
     available? &&
-    # rating_okay? &&
     price_okay? &&
     words_okay? &&
     true
@@ -25,12 +25,8 @@ class ProductIncludePolicy
     product['available']
   end
 
-  def rating_okay?
-    !product['rating'].nil? && product['rating'].to_i > MINIMUM_RATING
-  end
-
   def price_okay?
-    product['price'].to_i > MINIMUM_PRICE
+    (product['price'].to_i > MINIMUM_PRICE) && (product['price'].to_i < MAXIMUM_PRICE)
   end
 
   def words_okay?
