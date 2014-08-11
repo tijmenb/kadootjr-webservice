@@ -14,7 +14,8 @@ class ProductList
       { id: product['id'],
         title: product['title'],
         description: product['short_description'],
-        price: product['price'].to_f.round(2).to_s,
+        price: product['price'].to_f.round(2),
+        price_str: product['price'].to_f.round(2).to_s,
         url: shortlink_url(product['id']),
         image_url: product['image']
       }
