@@ -2,10 +2,7 @@ require 'dotenv'
 Dotenv.load
 
 require 'pp'
-require './lib/group'
-require './lib/product_syncer'
-require './lib/product_list'
-require './lib/cache'
+require './lib/kadootjr'
 
 task :deploy do
   `git push && git push heroku master:master && heroku run rake cache:clear`
@@ -16,6 +13,12 @@ namespace :cache do
   task :clear do
     Cache.clear
   end
+end
+
+desc 'Run console within environment'
+task :console do
+  require 'pry'
+  binding.pry
 end
 
 namespace :products do
