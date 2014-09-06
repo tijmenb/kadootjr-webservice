@@ -4,10 +4,6 @@ Dotenv.load
 require 'pp'
 require './lib/kadootjr'
 
-task :deploy do
-  `git push && git push heroku master:master && heroku run rake cache:clear`
-end
-
 namespace :cache do
   desc 'Clear de cache'
   task :clear do
